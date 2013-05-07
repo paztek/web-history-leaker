@@ -1,1 +1,34 @@
 @CHARSET "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#links {
+	list-style-type: none;
+}
+
+#links li {
+    height: 3em;
+}
+
+span.item {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: white;
+}
+
+span.item a {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #00AA00;
+	text-decoration: none;
+	cursor: default;
+}
+
+span.item a:visited {
+    background-color: #AA0000;
+}
