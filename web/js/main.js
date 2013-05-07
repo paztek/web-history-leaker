@@ -10,4 +10,13 @@ $(document).ready(function() {
 	}, function() {
 		$(this).attr('href', $(this).data('href'));
 	});
+	
+	var timeDiv = $('#time');
+	
+	var time= 30;
+	
+	setInterval(function() {
+		time -= 1;
+		timeDiv.html(time);
+	}, 1000);
 });

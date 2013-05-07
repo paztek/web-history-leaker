@@ -5,12 +5,8 @@
 	padding: 0px;
 }
 
-#links {
-	list-style-type: none;
-}
-
-#links li {
-    height: 3em;
+#grid {
+	margin: 50px;
 }
 
 span.item {
