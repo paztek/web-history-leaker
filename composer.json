@@ -1,0 +1,13 @@
+{
+    "require": {
+        "silex/silex": "1.0.*@dev",
+		"symfony/monolog-bridge": "~2.1",
+        "symfony/security": "~2.1",
+        "symfony/yaml": "~2.1",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "dflydev/doctrine-orm-service-provider": "1.0.*@dev"
+    },
+    "autoload": {
+        "psr-0": { "WHL": "src" }
+    }
+}

@@ -7,6 +7,8 @@
 
 #grid {
 	margin: 50px;
+    border: 1px solid black;
+    cursor: default;
 }
 
 span.item {
@@ -20,11 +22,15 @@ span.item a {
 	display: block;
 	width: 20px;
 	height: 20px;
-	background-color: #00AA00;
+	background-color: #FFFFFF;
 	text-decoration: none;
 	cursor: default;
 }
 
-span.item a:visited {
+span.item.real a:visited {
+    background-color: #AA0000;
+}
+
+span.item.real {
     background-color: #AA0000;
 }

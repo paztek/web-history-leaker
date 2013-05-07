@@ -11,12 +11,41 @@ $(document).ready(function() {
 		$(this).attr('href', $(this).data('href'));
 	});
 	
-	var timeDiv = $('#time');
+	var timeSpan = $('#time');
 	
-	var time= 30;
+	var time= 10;
+
+    var urls = [];
 	
-	setInterval(function() {
+	var id = setInterval(function() {
 		time -= 1;
-		timeDiv.html(time);
+		timeSpan.html(time);
+        if (time == 0) {
+            clearInterval(id);
+            console.log(urls);
+        }
 	}, 1000);
+
+    var score = 0;
+
+    $('span.real').on('click', function() {
+        if ($(this).hasClass('checked')) {
+            return;
+        }
+        $(this).addClass('checked');
+        $(this).removeClass('real');
+        score++;
+        var a = $(this).find('a');
+        if (a.length > 0) {
+            console.log(a.first().data('href'));
+            urls.push(a.first().data('href'));
+        }
+        updateScore();
+    });
+
+    var scoreSpan = $('#score');
+
+    function updateScore() {
+        scoreSpan.html(score);
+    };
 });
