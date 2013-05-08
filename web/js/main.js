@@ -75,11 +75,11 @@ $(document).ready(function() {
 	
 	var timeSpan = $('#time');
 	
-	var time = 3;
+	var time = 30;
 
     timeSpan.html(time);
 
-    var score = 3;
+    var score = 0;
 
     var countdownStarted = false;
     var intervalId;
