@@ -19,22 +19,18 @@ span.item {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	background-color: white;
 }
 
 span.item a {
 	display: block;
 	width: 20px;
 	height: 20px;
-	background-color: #FFFFFF;
+	background-color: white;
 	text-decoration: none;
 	cursor: default;
 }
 
-span.item.real a {
-    background-color: #AA0000;
-}
 
 span.item.real a:visited {
-    background-color: #AA0000;
+    background-color: red;
 }

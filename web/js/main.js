@@ -52,7 +52,10 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-    if (navigator.userAgent.indexOf('Mozilla') > -1) {
+    /*
+    var FF = !(window.mozInnerScreenX == null);
+
+    if (FF) {
         $('span.item a').attr('href', '');
     } else {
         $('span.item a').hover(function() {
@@ -62,8 +65,7 @@ $(document).ready(function() {
             $(this).attr('href', $(this).data('href'));
         });
     }
-
-
+    */
 	
 	var timeSpan = $('#time');
 	
