@@ -65,18 +65,12 @@ $(document).ready(function() {
     });
 
 
-    var FF = !(window.mozInnerScreenX == null);
-
-    if (FF) {
-        $('span.item a').attr('href', '');
-    } else {
-        $('span.item a').hover(function() {
-            $(this).data('href', $(this).attr('href'));
-            $(this).attr('href', '');
-        }, function() {
-            $(this).attr('href', $(this).data('href'));
-        });
-    }
+    $('span.item a').hover(function() {
+        $(this).data('href', $(this).attr('href'));
+        $(this).attr('href', '');
+    }, function() {
+        $(this).attr('href', $(this).data('href'));
+    });
 
 	
 	var timeSpan = $('#time');
