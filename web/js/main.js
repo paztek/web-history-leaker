@@ -81,7 +81,7 @@ $(document).ready(function() {
 	
 	var timeSpan = $('#time');
 	
-	var time = 2;
+	var time = 30;
 
     timeSpan.html(time);
 
