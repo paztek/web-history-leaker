@@ -75,11 +75,11 @@ $(document).ready(function() {
 	
 	var timeSpan = $('#time');
 	
-	var time = 30;
+	var time = 3;
 
     timeSpan.html(time);
 
-    var score = 0;
+    var score = 3;
 
     var countdownStarted = false;
     var intervalId;
@@ -134,12 +134,13 @@ $(document).ready(function() {
 
     function endOfTheGame() {
         // Disparition de la grille
-        $('#grid').fadeOut(5000);
+        $('#grid').fadeOut(10000);
         // Interruption du jeu
         $('span.real').off('mousedown');
         $('span:not(.real)').off('mousedown');
         // Apparition du message de game over
         $('#final_score').html(score);
         $('#gameover').slideDown(2000);
+        $('#infos').slideUp(2000);
     };
 });
