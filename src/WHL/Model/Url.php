@@ -32,11 +32,11 @@ class Url {
     protected $href;
 
     /**
-     * @var boolean
+     * @var integer
      *
-     * @Column(name="checked", type="boolean")
+     * @Column(name="counter", type="integer")
      */
-    protected $checked;
+    protected $counter;
 
     /**
      * @var \WHL\Model\Game
@@ -79,29 +79,6 @@ class Url {
     }
 
     /**
-     * Set checked
-     *
-     * @param boolean $checked
-     * @return Url
-     */
-    public function setChecked($checked)
-    {
-        $this->checked = $checked;
-    
-        return $this;
-    }
-
-    /**
-     * Get checked
-     *
-     * @return boolean 
-     */
-    public function getChecked()
-    {
-        return $this->checked;
-    }
-
-    /**
      * Set game
      *
      * @param \WHL\Model\Game $game
@@ -122,5 +99,28 @@ class Url {
     public function getGame()
     {
         return $this->game;
+    }
+
+    /**
+     * Set counter
+     *
+     * @param integer $counter
+     * @return Url
+     */
+    public function setCounter($counter)
+    {
+        $this->counter = $counter;
+    
+        return $this;
+    }
+
+    /**
+     * Get counter
+     *
+     * @return integer 
+     */
+    public function getCounter()
+    {
+        return $this->counter;
     }
 }
