@@ -1,0 +1,9 @@
+{% extends "layout.html.twig" %}
+
+{% block main %}
+    <form action="/create" method="POST">
+        <label for="urls">URLs à checker (une par ligne) :</label>
+        <textarea name="urls" placeholder="http://fr.youporn.com"></textarea>
+        <input type="submit" value="Créer le jeu" />
+    </form>
+{% endblock %}

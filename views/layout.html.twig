@@ -2,28 +2,35 @@
 <html lang="fr">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>WHL</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/css/main.css" />
+    {% endblock %}
+	<title>{% block title %}WHL{% endblock %}</title>
 </head>
 <body>
     {% block body %}
-    <header>
-        {% block header %}
-        {% endblock %}
-    </header>
-    <main>
-        <div class="container">
-            {% block main %}
+        <header>
+            {% block header %}
             {% endblock %}
-        </div>
-    </main>
-    <footer>
-        {% block footer %}
-        {% endblock %}
-    </footer>
+        </header>
+        <main>
+            <div class="container">
+                {% block main %}
+                {% endblock %}
+            </div>
+        </main>
+        <footer>
+            {% block footer %}
+            {% endblock %}
+        </footer>
+    {% endblock %}
+
+    {% block bootstrap %}
     {% endblock %}
 
     {% block javascripts %}
-    <script src="/assets/js/jquery.js"></script>
+        <script src="/js/libs/jquery.js"></script>
+        <script src="/js/main.js"></script>
     {% endblock %}
 </body>
 </html>

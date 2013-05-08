@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block main %}
+    {% if game.played %}
+        <h1>Résultats du jeu</h1>
+        <ul>
+            {% for url in game.urls %}
+                <li>
+                    {% if url.checked %}
+                        L'URL {{ url.href }} était présente dans l'historique de la personne piégée.
+                    {% else %}
+                        L'URL {{ url.href }} ne semble pas être dans l'historique de la personne piégée.
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>
+            Il semblerait que personne n'ait encore joué à votre jeu. Faites tourner le lien suivant !
+            <a href="/game/{{ game.id }}">http://whl.local/game/{{ game.id }}</a>.
+            Reviens ensuite sur cette page pour voir les résultats.
+        </p>
+    {% endif %}
+{% endblock %}
