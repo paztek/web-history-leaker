@@ -1,6 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block main %}
+
     <div id="grid">
     </div>
 
@@ -10,7 +11,7 @@
 
 {% block bootstrap %}
     <script>
-        var urls = {{ data | json_encode | raw }};
+        var datae = '{{ data }}';
     </script>
 {% endblock %}
 

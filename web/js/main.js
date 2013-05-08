@@ -6,6 +6,25 @@ $(document).ready(function() {
 
     // Construction de la grille
 
+    // Decrypte global var datae
+    urls = JSON.parse(atob(datae));
+
+    for (var i = 0; i < urls.length; i++) {
+        var url = '';
+        for (var j = 0; j < urls[i].href.length; j++) {
+            var char = urls[i].href[j];
+            if (Math.random() < 0.5 || [ ',', '/', '?', ':', '@', '&', '=', '+', '$', '#'].indexOf(char) > -1) {
+                url += $('<div/>').text(char).html();
+            } else {
+                url += encodeURI(char);
+            }
+        }
+        console.log(url);
+        urls[i].href = url;
+    }
+
+    console.log(urls);
+
     // 1) Construction du tableau complet : URLs répétées + autant de fake + padding avec du vide
     var data = [];
     while (data.length < gridSize/4) {
