@@ -11,6 +11,10 @@
     cursor: default;
 }
 
+div.line {
+    height: 20px;
+}
+
 span.item {
 	display: inline-block;
 	width: 20px;
@@ -27,10 +31,10 @@ span.item a {
 	cursor: default;
 }
 
-span.item.real a:visited {
+span.item.real a {
     background-color: #AA0000;
 }
 
-span.item.real {
+span.item.real a:visited {
     background-color: #AA0000;
 }

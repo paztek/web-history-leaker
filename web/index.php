@@ -73,7 +73,7 @@ $app->get('/report/{id}', function (Request $request, $id) use($app) {
     return $app['twig']->render('report.html.twig', array('game' => $game));
 });
 
-$app->put('/url/{id}', function (Request $request, $id) use($app) {
+$app->post('/url/{id}', function (Request $request, $id) use($app) {
     $em = $app['orm.em'];
 
     $url = $em->getRepository('WHL\Model\Url')->find($id);
