@@ -34,7 +34,7 @@ $app->post('/create', function (Request $request) use($app) {
 
     foreach ($urlsData as $urlData) {
         $url = new Url();
-        $url->setChecked(false);
+        $url->setCounter(0);
         $url->setHref($urlData);
         $url->setGame($game);
         $em->persist($url);
@@ -72,7 +72,13 @@ $app->get('/report/{id}', function (Request $request, $id) use($app) {
 
     $game = $em->getRepository('WHL\Model\Game')->find($id);
 
-    return $app['twig']->render('report.html.twig', array('game' => $game));
+    $totalCount = 0;
+
+    foreach ($game->getUrls() as $url) {
+        $totalCount += $url->getCounter();
+    }
+
+    return $app['twig']->render('report.html.twig', array('game' => $game, 'total' => $totalCount));
 });
 
 $app->post('/url/{id}', function (Request $request, $id) use($app) {
@@ -80,7 +86,7 @@ $app->post('/url/{id}', function (Request $request, $id) use($app) {
 
     $url = $em->getRepository('WHL\Model\Url')->find($id);
 
-    $url->setChecked(true);
+    $url->setCounter($url->getCounter() + 1);
 
     $em->flush();
 

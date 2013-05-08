@@ -2,15 +2,11 @@
 
 {% block main %}
     {% if game.played %}
-        <h1>Résultats du jeu</h1>
+        <h1>Résultats du jeu : {{ total }} clics</h1>
         <ul>
             {% for url in game.urls %}
                 <li>
-                    {% if url.checked %}
-                        L'URL {{ url.href }} était présente dans l'historique de la personne piégée.
-                    {% else %}
-                        L'URL {{ url.href }} ne semble pas être dans l'historique de la personne piégée.
-                    {% endif %}
+                    L'URL {{ url.href }} a été cliquée {{ url.counter }} fois.
                 </li>
             {% endfor %}
         </ul>
