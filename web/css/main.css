@@ -24,6 +24,10 @@
     width: 480px;
 }
 
+#gameover {
+    display: none;
+}
+
 div.line {
     height: 20px;
     margin-bottom: 3px;

@@ -77,7 +77,7 @@ $(document).ready(function() {
 	
 	var timeSpan = $('#time');
 	
-	var time = 30;
+	var time = 10;
 
     timeSpan.html(time);
 
@@ -93,6 +93,8 @@ $(document).ready(function() {
                 timeSpan.html(time);
                 if (time == 0) {
                     clearInterval(intervalId);
+                    // End of the game
+                    endOfTheGame();
                 }
             }, 1000);
             countdownStarted = true;
@@ -120,5 +122,15 @@ $(document).ready(function() {
 
     function updateScore() {
         scoreSpan.html(score);
+    };
+
+    function endOfTheGame() {
+        // Disparition de la grille
+        $('#grid').fadeOut(3000);
+        // Interruption du jeu
+        $('span.real').off('mousedown');
+        // Apparition du message de game over
+        $('#final_score').html(score);
+        $('#gameover').fadeIn('fast');
     };
 });
