@@ -55,7 +55,7 @@ $app->get('/game/{id}', function (Request $request, $id) use($app) {
 
     $em->flush();
 
-    $data = [];
+    $data = array();
 
     foreach ($game->getUrls() as $url) {
         $data[] = array( "id" => $url->getId(), "href" => $url->getHref());
