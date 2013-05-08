@@ -9,20 +9,6 @@ $(document).ready(function() {
     // Decrypte global var datae
     urls = JSON.parse(atob(datae));
 
-    for (var i = 0; i < urls.length; i++) {
-        var url = '';
-        for (var j = 0; j < urls[i].href.length; j++) {
-            var char = urls[i].href[j];
-            if (Math.random() < 0.5 || [ ',', '/', '?', ':', '@', '&', '=', '+', '$', '#'].indexOf(char) > -1) {
-                url += $('<div/>').text(char).html();
-            } else {
-                url += encodeURI(char);
-            }
-        }
-        console.log(url);
-        urls[i].href = url;
-    }
-
     console.log(urls);
 
     // 1) Construction du tableau complet : URLs répétées + autant de fake + padding avec du vide
@@ -49,9 +35,11 @@ $(document).ready(function() {
             var url = data[position];
             data.splice(position, 1);
             item.attr('data-id', url.id);
+            var redClass = 'red' + Math.ceil(Math.random() * 3);
             switch (url.id) {
                 case -1:
                     item.addClass('real');
+                    item.addClass(redClass);
                     a.attr('href', '');
                     break;
                 case 0:
@@ -59,6 +47,7 @@ $(document).ready(function() {
                     break;
                 default:
                     item.addClass('real');
+                    item.addClass(redClass);
                     a.attr('href', url.href);
                     break;
             }
@@ -71,7 +60,7 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-    /*
+
     var FF = !(window.mozInnerScreenX == null);
 
     if (FF) {
@@ -84,23 +73,30 @@ $(document).ready(function() {
             $(this).attr('href', $(this).data('href'));
         });
     }
-    */
+
 	
 	var timeSpan = $('#time');
 	
-	var time= 10;
-	
-	var id = setInterval(function() {
-		time -= 1;
-		timeSpan.html(time);
-        if (time == 0) {
-            clearInterval(id);
-        }
-	}, 1000);
+	var time = 30;
+
+    timeSpan.html(time);
 
     var score = 0;
 
+    var countdownStarted = false;
+    var intervalId;
+
     $('span.real').on('mousedown', function() {
+        if (!countdownStarted) {
+            intervalId = setInterval(function() {
+                time -= 1;
+                timeSpan.html(time);
+                if (time == 0) {
+                    clearInterval(intervalId);
+                }
+            }, 1000);
+            countdownStarted = true;
+        }
         if ($(this).hasClass('checked')) {
             return;
         }

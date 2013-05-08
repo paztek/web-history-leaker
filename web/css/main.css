@@ -5,20 +5,35 @@
 	padding: 0px;
 }
 
+.container {
+    width: 600px;
+    margin: auto;
+}
+
+#infos {
+    width: 400px;
+    text-align: center;
+    margin: 10px auto;
+}
+
 #grid {
-	margin: 50px;
+    margin: auto;
     border: 1px solid black;
-    cursor: default;
+    border-radius: 2px;
+    cursor: none;
+    width: 480px;
 }
 
 div.line {
     height: 20px;
+    margin-bottom: 3px;
 }
 
 span.item {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
+    margin: 2px;
 }
 
 span.item a {
@@ -27,10 +42,46 @@ span.item a {
 	height: 20px;
 	background-color: white;
 	text-decoration: none;
-	cursor: default;
+	cursor: none;
 }
 
-
-span.item.real a:visited {
-    background-color: red;
+span.item.real.red1 a:visited {
+     background-color: red;
 }
+
+span.item.real.red2 a:visited {
+    background-color: indianred;
+}
+
+span.item.real.red3 a:visited {
+    background-color: orangered;
+}
+
+span.item a:hover {
+    background-color: black;
+}
+
+span.item.real a:hover {
+    background-color: black;
+}
+
+span.item.real.red1 a:hover {
+    background-color: black;
+}
+
+span.item.real.red2 a:hover {
+    background-color: black;
+}
+
+span.item.real.red3 a:hover {
+    background-color: black;
+}
+
+span.item.checked a:hover {
+    background-color: black;
+}
+
+span.item.checked a:active {
+    background-color: yellow;
+}
+
