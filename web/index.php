@@ -64,7 +64,8 @@ $app->get('/game/{id}', function (Request $request, $id) use($app) {
     $encrypted = base64_encode(json_encode($data));
 
     return $app['twig']->render('game.html.twig', array('data' => $encrypted));
-});
+})
+->bind('game');
 
 $app->get('/report/{id}', function (Request $request, $id) use($app) {
 

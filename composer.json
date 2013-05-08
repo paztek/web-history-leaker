@@ -5,6 +5,7 @@
         "symfony/security": "~2.1",
         "symfony/yaml": "~2.1",
         "twig/twig": ">=1.8,<2.0-dev",
+        "symfony/twig-bridge": "~2.1",
         "dflydev/doctrine-orm-service-provider": "1.0.*@dev"
     },
     "autoload": {
