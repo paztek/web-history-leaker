@@ -133,14 +133,20 @@ $(document).ready(function() {
     };
 
     function endOfTheGame() {
-        // Disparition de la grille
-        $('#grid').fadeOut(10000);
         // Interruption du jeu
         $('span.real').off('mousedown');
         $('span:not(.real)').off('mousedown');
-        // Apparition du message de game over
+
+        // Apparition du message de game over...
+        $('#gameover').slideDown(1000);
+        // ...à la place des infos !
+        $('#infos').slideUp(1000);
+
+        // Apparition score final
+        $('#endScore').fadeIn(1000);
         $('#final_score').html(score);
-        $('#gameover').slideDown(2000);
-        $('#infos').slideUp(2000);
+
+        // Disparition de la grille
+        $('#grid').fadeOut(6000);
     };
 });
