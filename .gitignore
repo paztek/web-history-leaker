@@ -17,3 +17,6 @@ logs/
 
 #Readmes
 !*/README
+
+#Doctrine temp
+*.php~
