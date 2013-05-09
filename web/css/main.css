@@ -55,6 +55,16 @@
     font-size: 4em;
 }
 
+#pain {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    background-color: red;
+}
+
+
 div.line {
     height: 20px;
     margin-bottom: 3px;

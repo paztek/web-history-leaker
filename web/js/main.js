@@ -106,6 +106,8 @@ $(document).ready(function() {
     });
 
     $('span:not(.real)').on('mousedown', function() {
+        $('#pain').show()
+        $('#pain').fadeOut('fast');
         endOfTheGame();
     });
 
