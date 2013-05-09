@@ -1,9 +1,16 @@
 {% extends "layout.html.twig" %}
 
 {% block main %}
+    <h1>Créer d'un jeu</h1>
     <form action="/create" method="POST">
-        <label for="urls">URLs à checker (une par ligne) :</label>
-        <textarea name="urls" placeholder="http://fr.youporn.com"></textarea>
-        <input type="submit" value="Créer le jeu" />
+        <table>
+            <tr><td>
+            <label for="urls">URLs à checker (une par ligne) :</label>
+            <textarea rows="6" cols="50" name="urls" placeholder="http://www.google.fr"></textarea>
+            </td></tr>
+            <tr><td>
+            <input type="submit" value="Créer le jeu" />
+            </td></tr>
+        </table>
     </form>
 {% endblock %}
