@@ -106,9 +106,7 @@ $(document).ready(function() {
     });
 
     $('span:not(.real)').on('mousedown', function() {
-        startCounter();
-        score -= 10;
-        updateScore();
+        endOfTheGame();
     });
 
     var scoreSpan = $('#score');
