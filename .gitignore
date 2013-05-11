@@ -3,20 +3,23 @@
 .project
 .buildpath
 
-#PhpStorm
+# PhpStorm
 .idea/
 
-#IIS
+# IIS
 [Ww]eb.config
 
-#Silex
+# Silex
 vendor/
 cache/
 data/
 logs/
 
-#Readmes
+# Readmes
 !*/README
 
-#Doctrine temp
+# Doctrine temp
 *.php~
+
+# Composer
+composer.phar
