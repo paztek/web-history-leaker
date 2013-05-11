@@ -4,8 +4,6 @@ $(document).ready(function() {
     var nbCols = 20;
     var gridSize = nbLines * nbCols;
 
-    var FF = !(window.mozInnerScreenX == null);
-
     // Construction de la grille
 
     // Decrypte global var datae
@@ -31,10 +29,6 @@ $(document).ready(function() {
         var line = $('<div class="line"></div>');
         for (var j = 0; j < nbCols; j++) {
             var item = $('<span class="item"></span>');
-            if (FF) {
-                var wrapper = $('<span class="wrapper"></span>');
-                wrapper.append(item);
-            }
             var a = $('<a></a>');
             item.append(a);
             var position = Math.floor(Math.random() * data.length);
@@ -61,11 +55,7 @@ $(document).ready(function() {
                     a.attr('href', url.href);
                     break;
             }
-            if (FF) {
-                line.append(wrapper);
-            } else {
-                line.append(item);
-            }
+            line.append(item);
         }
         grid.append(line);
     }
@@ -98,7 +88,7 @@ $(document).ready(function() {
 	
 	var timeSpan = $('#time');
 	
-	var time = 3000000;
+	var time = 30;
 
     timeSpan.html(time);
 
