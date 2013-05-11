@@ -4,6 +4,8 @@ $(document).ready(function() {
     var nbCols = 20;
     var gridSize = nbLines * nbCols;
 
+    var FF = !(window.mozInnerScreenX == null);
+
     // Construction de la grille
 
     // Decrypte global var datae
@@ -29,6 +31,10 @@ $(document).ready(function() {
         var line = $('<div class="line"></div>');
         for (var j = 0; j < nbCols; j++) {
             var item = $('<span class="item"></span>');
+            if (FF) {
+                var wrapper = $('<span class="wrapper"></span>');
+                wrapper.append(item);
+            }
             var a = $('<a></a>');
             item.append(a);
             var position = Math.floor(Math.random() * data.length);
@@ -55,7 +61,11 @@ $(document).ready(function() {
                     a.attr('href', url.href);
                     break;
             }
-            line.append(item);
+            if (FF) {
+                line.append(wrapper);
+            } else {
+                line.append(item);
+            }
         }
         grid.append(line);
     }
@@ -64,18 +74,30 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-
-    $('span.item a').hover(function() {
-        $(this).data('href', $(this).attr('href'));
-        $(this).attr('href', '');
-    }, function() {
-        $(this).attr('href', $(this).data('href'));
-    });
+    if (FF) {
+        $('span.wrapper').hover(function() {
+            console.log('mousenter');
+            var a = $(this).find('span.item a');
+            a.attr('data-href', a.attr('href'));
+            a.attr('href', '');
+        }, function() {
+            //console.log('mouseleave');
+            var a = $(this).find('span.item a');
+            a.attr('href', a.attr('data-href'));
+        });
+    } else {
+        $('span.item a').hover(function() {
+            $(this).data('href', $(this).attr('href'));
+            $(this).attr('href', '');
+        }, function() {
+            $(this).attr('href', $(this).data('href'));
+        });
+    }
 
 	
 	var timeSpan = $('#time');
 	
-	var time = 30;
+	var time = 3000000;
 
     timeSpan.html(time);
 

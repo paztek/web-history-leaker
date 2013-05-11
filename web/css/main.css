@@ -56,6 +56,11 @@ div.line {
     margin-bottom: 3px;
 }
 
+span.wrapper {
+    display: inline-block;
+    padding: 2px;
+}
+
 span.item {
 	display: inline-block;
 	width: 20px;
