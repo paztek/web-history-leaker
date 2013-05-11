@@ -17,19 +17,38 @@
     font-size: 1.5em;
 }
 
-#grid {
+#playground {
     margin: auto;
     border: 1px solid black;
+    position: relative;
     border-radius: 2px;
-    cursor: none;
     width: 480px;
+    height: 460px;
+}
+
+#grid {
+    cursor: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #gameover {
     display: none;
     margin: auto;
     text-align: center;
-    font-size: 2em;
+    font-size: 4em;
+}
+
+#endScore {
+    display: none;
+    margin-top: 30%;
+    text-align: center;
+    position: absolute;
+    font-size: 4em;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
 }
 
 div.line {
