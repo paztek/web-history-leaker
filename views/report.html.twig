@@ -13,11 +13,11 @@
     {% else %}
         <p>
             Il semblerait que personne n'ait encore joué à votre jeu. Faites tourner le lien !
-            Reviens ensuite sur cette page pour voir les résultats.
+            Revenez ensuite sur cette page pour voir les résultats.
         </p>
     {% endif %}
         <div id="links">
-        <p>Lien du jeu : <a href="/game/{{ game.id }}">{{ url('game', {id: game.id}) }}</a></p>
-        <p>Vous pouvez aussi <a href="/new">générer un nouveau jeu</a></p>
+        <p>Lien du jeu : <a href="{{ path('game_show', { id: game.id }) }}">{{ url('game_show', { id: game.id }) }}</a></p>
+        <p>Vous pouvez aussi <a href="{{ path('game_new') }}">générer un nouveau jeu</a></p>
         </div>
 {% endblock %}

@@ -19,7 +19,7 @@ $app->get('/', function (Request $request) use($app) {
 
 $app->get('/new', function (Request $request) use($app) {
     return $app['twig']->render('new.html.twig');
-});
+})->bind('game_new');
 
 $app->post('/create', function (Request $request) use($app) {
 
@@ -43,7 +43,7 @@ $app->post('/create', function (Request $request) use($app) {
     $em->flush();
 
     return $app->redirect("/report/" . $game->getId());
-});
+})->bind('game_create');
 
 $app->get('/game/{id}', function (Request $request, $id) use($app) {
 
@@ -64,8 +64,7 @@ $app->get('/game/{id}', function (Request $request, $id) use($app) {
     $encrypted = base64_encode(json_encode($data));
 
     return $app['twig']->render('game.html.twig', array('data' => $encrypted));
-})
-->bind('game');
+})->bind('game_show');
 
 $app->get('/report/{id}', function (Request $request, $id) use($app) {
 
@@ -80,7 +79,7 @@ $app->get('/report/{id}', function (Request $request, $id) use($app) {
     }
 
     return $app['twig']->render('report.html.twig', array('game' => $game, 'total' => $totalCount));
-});
+})->bind('game_report');
 
 $app->post('/url/{id}', function (Request $request, $id) use($app) {
     $em = $app['orm.em'];
@@ -92,7 +91,7 @@ $app->post('/url/{id}', function (Request $request, $id) use($app) {
     $em->flush();
 
     return new \Symfony\Component\HttpFoundation\Response("", 200);
-});
+})->bind('url_update');
 
 /*
  * Debug Routes
