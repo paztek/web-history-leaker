@@ -74,26 +74,27 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-    if (FF) {
-        $('span.wrapper').hover(function() {
-            console.log('mousenter');
-            var a = $(this).find('span.item a');
-            a.attr('data-href', a.attr('href'));
-            a.attr('href', '');
-        }, function() {
-            //console.log('mouseleave');
-            var a = $(this).find('span.item a');
-            a.attr('href', a.attr('data-href'));
+    function replace() {
+        // As mouseleave does not always trigger, we need to find and replace every existing "replacement" that is still around
+        $('#grid .replacement').each(function() {
+            replaceBack.apply(this);
         });
-    } else {
-        $('span.item a').hover(function() {
-            $(this).data('href', $(this).attr('href'));
-            $(this).attr('href', '');
-        }, function() {
-            $(this).attr('href', $(this).data('href'));
-        });
+        var a = $(this);
+        var replacement = $('<span class="replacement"></span>');
+        replacement.attr('data-href', a.attr('href'));
+        a.replaceWith(replacement);
+        replacement.on('mouseleave', replaceBack);
+    };
+
+    function replaceBack() {
+        var replacement = $(this);
+        var a = $('<a></a>');
+        a.attr('href', replacement.attr('data-href'));
+        replacement.replaceWith(a);
+        a.on('mouseenter', replace);
     }
 
+    $('span.item a').on('mouseenter', replace);
 	
 	var timeSpan = $('#time');
 	

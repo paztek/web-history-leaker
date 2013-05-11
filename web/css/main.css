@@ -77,8 +77,14 @@ span.item a {
 	cursor: none;
 }
 
-span.item.real.red1 a:visited {
-     background-color: red;
+#grid .item .replacement {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+#grid .item.real.red1 a:visited {
+    background-color: red;
 }
 
 span.item.real.red2 a:visited {
@@ -89,31 +95,7 @@ span.item.real.red3 a:visited {
     background-color: orangered;
 }
 
-span.item a:hover {
+#grid .item .replacement:hover {
     background-color: black;
-}
-
-span.item.real a:hover {
-    background-color: black;
-}
-
-span.item.real.red1 a:hover {
-    background-color: black;
-}
-
-span.item.real.red2 a:hover {
-    background-color: black;
-}
-
-span.item.real.red3 a:hover {
-    background-color: black;
-}
-
-span.item.checked a:hover {
-    background-color: black;
-}
-
-span.item.checked a:active {
-    background-color: yellow;
 }
 
