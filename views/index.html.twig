@@ -1,6 +1,49 @@
 {% extends "layout.html.twig" %}
 
 {% block main %}
-    <h1>Bienvenue sur notre super jeu en ligne</h1>
-    <a href="{{ path('game_new') }}">Créer un nouveau jeu</a>
+    <h1>Welcome to our new security experiment</h1>
+    <p class="lead">
+        Here are two facts:
+    </p>
+    <p>
+        1. More and more of today's web attacks rely on the victim's interactions to be successful and
+        it's sometimes very tricky to lead the victim to perform the specific actions needed.
+    </p>
+    <p>
+        2. People love casual games.
+    </p>
+    <p class="lead">
+        So why not disguise an attack as a game?
+    </p>
+    <p>
+        This is what this experiment is about. We try to reveal parts of the player's browser history by making him play a game
+        where he's invited to click on squares of different colors.
+    </p>
+    <a href="{{ path('game_new') }}" class="btn btn-primary">Create a new game</a>
+{% endblock %}
+
+{% block under %}
+    <div class="span6">
+        <h4>How to use ?</h4>
+        <ol>
+            <li>The attacker, who wants to sniff on one of his acquaintances web history, fills a web form listing all the URLs that should be tested by the game.</li>
+            <li>On submission, he receives a link pointing to a customized version of the "game".</li>
+            <li>He can now suggest his victim to play the game by sending him the link and by using some social engineering technics.</li>
+            <li>Once the victim has played the game, the attacker can consult a web page listing all the URLs that have been detected in the victim's browser history.</li>
+        </ol>
+    </div>
+    <div class="span6">
+        <h4>But why ?</h4>
+        <p>
+            First because we wanted to see if we could circumvent browsers limitations and make a realistic game where the player
+            has little or no idea that he's giving away informations.
+        </p>
+        <p>
+            Secondly, to eventually anwser this f&#@!*ng question: <div class="well">"Did she visit my Facebook profile or not !?".</div>
+        </p>
+        <h4>How it works</h4>
+        <p>
+            For an in-depth explanation of our work, see <a href="#">this page</a>.
+        </p>
+    </div>
 {% endblock %}
