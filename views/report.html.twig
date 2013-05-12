@@ -12,9 +12,12 @@
         </ul>
     {% else %}
         <p>
-            Il semblerait que personne n'ait encore joué à votre jeu. Faites tourner le lien suivant !
-            <a href="/game/{{ game.id }}">http://whl.local/game/{{ game.id }}</a>.
-            Reviens ensuite sur cette page pour voir les résultats.
+            Il semblerait que personne n'ait encore joué à votre jeu. Faites tourner le lien !
+            Revenez ensuite sur cette page pour voir les résultats.
         </p>
     {% endif %}
+        <div id="links">
+        <p>Lien du jeu : <a href="{{ path('game_show', { id: game.id }) }}">{{ url('game_show', { id: game.id }) }}</a></p>
+        <p>Vous pouvez aussi <a href="{{ path('game_new') }}">générer un nouveau jeu</a></p>
+        </div>
 {% endblock %}
