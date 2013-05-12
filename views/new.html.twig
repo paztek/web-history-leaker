@@ -1,8 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block main %}
-    <h1>Créer d'un jeu</h1>
-    <form action="/create" method="POST">
+    <form action="{{ path('game_create') }}" method="POST">
         <table>
             <tr><td>
             <label for="urls">URLs à checker (une par ligne) :</label>
