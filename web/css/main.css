@@ -6,7 +6,7 @@
 }
 
 .jumbotron {
-    margin: 60px;
+    margin: 30px 60px;
 }
 
 .jumbotron h1 {
@@ -20,42 +20,48 @@
     line-height: 30px;
 }
 
-#infos {
-    width: 400px;
-    text-align: center;
-    margin: 10px auto;
-    font-size: 1.5em;
-}
-
 #playground {
     margin: auto;
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 5px;
     position: relative;
     width: 440px;
     height: 440px;
 }
 
+#infos {
+    padding: 10px;
+}
+
+#ingame {
+    text-align: center;
+    font-size: 1.5em;
+}
+
 #gameover {
     display: none;
-    margin: auto;
+}
+
+#gameover h2 {
     text-align: center;
     font-size: 4em;
 }
 
-#endScore {
+#endscore {
     display: none;
     position: absolute;
-    height: 100%;
     width: 100%;
-    z-index: 9;
+    height: 100%;
 }
 
-#endScore td {
-    vertical-align: middle;
-    white-space: normal;
+#endscore .tile {
+    width: 300px;
+    margin: 60px auto;
+}
+
+#endscore .tile h2 {
     text-align: center;
-    font-size: 4em;
+    font-size: 2em;
 }
 
 #pain {
@@ -85,6 +91,7 @@
     display: block;
     width: 20px;
     height: 20px;
+    border-radius: 4px;
     background-color: white;
     text-decoration: none;
     cursor: none;
@@ -94,6 +101,7 @@
     display: block;
     width: 20px;
     height: 20px;
+    border-radius: 4px;
 }
 
 #grid .item.real.red1 a:visited {
