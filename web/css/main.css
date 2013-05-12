@@ -7,6 +7,9 @@
 
 .jumbotron {
     margin: 60px;
+}
+
+.jumbotron h1 {
     text-align: center;
 }
 
