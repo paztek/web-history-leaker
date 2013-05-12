@@ -20,17 +20,10 @@
 #playground {
     margin: auto;
     border: 1px solid black;
-    position: relative;
     border-radius: 2px;
-    width: 480px;
-    height: 460px;
-}
-
-#grid {
-    cursor: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: 440px;
+    height: 440px;
 }
 
 #gameover {
@@ -45,7 +38,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 10;
+    z-index: 9;
 }
 
 #endScore td {
@@ -60,69 +53,61 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 9;
+    z-index: 10;
     background-color: red;
 }
 
 
-div.line {
-    height: 20px;
-    margin-bottom: 3px;
+#grid {
+    cursor: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-span.item {
+#grid .line {
+    height: 20px;
+    padding: 1px 0px;
+}
+
+#grid .item {
 	display: inline-block;
 	width: 20px;
-	height: 20px;
-    margin: 2px;
+	height: 100%;
+    padding: 0px 1px;
 }
 
-span.item a {
+#grid .item a {
 	display: block;
-	width: 20px;
-	height: 20px;
+	width: 100%;
+	height: 100%;
 	background-color: white;
 	text-decoration: none;
 	cursor: none;
 }
 
-span.item.real.red1 a:visited {
+#grid .item.real.red1 a:visited {
      background-color: red;
 }
 
-span.item.real.red2 a:visited {
+#grid .item.real.red2 a:visited {
     background-color: indianred;
 }
 
-span.item.real.red3 a:visited {
+#grid .item.real.red3 a:visited {
     background-color: orangered;
 }
 
-span.item a:hover {
+#grid .item a:hover,
+#grid .item.real a:hover,
+#grid .item.real.red1 a:hover,
+#grid .item.real.red2 a:hover,
+#grid .item.real.red3 a:hover,
+#grid .item.checked a:hover {
     background-color: black;
 }
 
-span.item.real a:hover {
-    background-color: black;
-}
-
-span.item.real.red1 a:hover {
-    background-color: black;
-}
-
-span.item.real.red2 a:hover {
-    background-color: black;
-}
-
-span.item.real.red3 a:hover {
-    background-color: black;
-}
-
-span.item.checked a:hover {
-    background-color: black;
-}
-
-span.item.checked a:active {
+#grid .item.checked a:active {
     background-color: yellow;
 }
 
