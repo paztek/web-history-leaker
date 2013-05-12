@@ -35,6 +35,8 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
 	'monolog.logfile' => __DIR__.'/logs/silex.log',
 ));
+// The URL Generator Service
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 // The Twig service
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
