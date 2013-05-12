@@ -36,6 +36,24 @@
     font-size: 1.5em;
 }
 
+#balloonscore {
+    position: relative;
+    display: inline;
+    opacity: 0;
+    right: -7px;
+    top: -10px;
+    border-radius: 18px;
+}
+
+#balloonscore.positive {
+    padding: 5px 4px;
+    background-color: #1abc9c;
+}
+
+#balloonscore.negative {
+    padding: 7px 5px;
+}
+
 #gameover {
     display: none;
 }

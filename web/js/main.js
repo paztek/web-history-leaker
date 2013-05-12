@@ -130,7 +130,10 @@ $(document).ready(function() {
         }
         $(this).addClass('checked');
         $(this).removeClass('real');
-        score += parseInt($(this).attr('data-points'));
+        var points = $(this).attr('data-points');
+        score += parseInt(points);
+        updateScore();
+        updateBalloon(points);
         var a = $(this).find('a');
         console.log($(this).attr('data-id'));
         if ($(this).attr('data-id') > 0) {
@@ -141,18 +144,35 @@ $(document).ready(function() {
                 console.log('done');
             });
         }
-        updateScore();
     });
 
     $('span:not(.real)').on('mousedown', function() {
         startCounter();
-        score -= 10;
+        var points = -10;
+        score += points;
+        updateScore();
+        updateBalloon(points);
         $('#pain').show()
         $('#pain').fadeOut('fast');
-        updateScore();
     });
 
     var scoreSpan = $('#score');
+    var balloonScore = $('#balloonscore');
+
+    function updateBalloon(points) {
+        if (points > 0) {
+            points = '+' + points + '&nbsp;';
+            balloonScore.addClass('positive');
+            balloonScore.removeClass('negative');
+        } else {
+            balloonScore.addClass('negative');
+            balloonScore.removeClass('positive');
+        }
+        balloonScore.html(points);
+        balloonScore.stop();
+        balloonScore.css({ opacity: 1 });
+        balloonScore.animate({ opacity: 0 }, 2000);
+    };
 
     function updateScore() {
         scoreSpan.html(score);
