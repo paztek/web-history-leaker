@@ -1,10 +1,13 @@
 $(document).ready(function() {
 
+    var gridWidth = 400;
+    var gridPadding = 1
+
     var nbLines = 20;
     var nbCols = 20;
-    var gridSize = nbLines * nbCols;
 
     // Construction de la grille
+    var gridSize = nbLines * nbCols;
 
     // Decrypte global var datae
     urls = JSON.parse(atob(datae));
@@ -59,6 +62,12 @@ $(document).ready(function() {
         }
         grid.append(line);
     }
+
+    $('div.line').height(gridWidth / nbLines);
+    $('span.item').width(gridWidth / nbCols);
+    $('#playground').height(gridWidth + nbLines * gridPadding * 2);
+    $('#playground').width(gridWidth + nbCols * gridPadding * 2);
+
 
     $('span.item a').on('click', function(event) {
         event.preventDefault();
