@@ -18,6 +18,6 @@
     {% endif %}
         <div id="links">
         <p>Lien du jeu : <a href="{{ path('game_show', { id: game.id }) }}">{{ url('game_show', { id: game.id }) }}</a></p>
-        <p>Vous pouvez aussi <a href="{{ path('game_new') }}">générer un nouveau jeu</a></p>
+        <p>Vous pouvez aussi <a href="{{ path('game_new') }}" class="btn btn-primary">générer un nouveau jeu</a></p>
         </div>
 {% endblock %}

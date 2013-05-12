@@ -179,11 +179,11 @@ $(document).ready(function() {
         // Apparition du message de game over...
         $('#gameover').slideDown(1000);
         // ...à la place des infos !
-        $('#infos').slideUp(1000);
+        $('#ingame').slideUp(1000);
 
         // Apparition score final
-        $('#endScore').fadeIn(1000);
-        $('#final_score').html(score);
+        $('#endscore').fadeIn(1000);
+        $('#finalscore').html(score);
 
         // Disparition de la grille
         $('#grid').fadeOut(6000);

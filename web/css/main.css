@@ -1,49 +1,65 @@
 @CHARSET "UTF-8";
 
-* {
-    margin: 0px;
-    padding: 0px;
+.container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
 }
 
-.container {
-    width: 600px;
-    margin: auto;
+.jumbotron {
+    margin: 30px 60px;
 }
 
-#infos {
-    width: 400px;
+.jumbotron h1 {
     text-align: center;
-    margin: 10px auto;
-    font-size: 1.5em;
+}
+
+.lead {
+    margin-bottom: 20px;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 30px;
 }
 
 #playground {
     margin: auto;
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 5px;
     position: relative;
+}
+
+#infos {
+    padding: 10px;
+}
+
+#ingame {
+    text-align: center;
+    font-size: 1.5em;
 }
 
 #gameover {
     display: none;
-    margin: auto;
+}
+
+#gameover h2 {
     text-align: center;
     font-size: 4em;
 }
 
-#endScore {
+#endscore {
     display: none;
     position: absolute;
-    height: 100%;
     width: 100%;
-    z-index: 9;
+    height: 100%;
 }
 
-#endScore td {
-    vertical-align: middle;
-    white-space: normal;
+#endscore .tile {
+    width: 300px;
+    margin: 60px auto;
+}
+
+#endscore .tile h2 {
     text-align: center;
-    font-size: 4em;
+    font-size: 2em;
 }
 
 #pain {
@@ -62,10 +78,6 @@
     height: 100%;
 }
 
-#grid * {
-    cursor: none;
-}
-
 #grid .line {
     padding: 1px 0px;
 }
@@ -78,8 +90,9 @@
 
 #grid .item a {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
     background-color: white;
     text-decoration: none;
     cursor: none;
@@ -87,9 +100,10 @@
 
 #grid .item .replacement {
     display: block;
-    width: 100%;
-    height: 100%;
     background-color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
 }
 
 #grid .item.real.red1 a:visited {

@@ -3,25 +3,26 @@
 {% block main %}
 
     <div id="infos">
-        <p>Time left : <span id="time"></span></p>
-        <p>Score : <span id="score">0</span></p>
+        <div id="ingame">
+            <p>Time left : <span id="time"></span></p>
+            <p>Score : <span id="score">0</span></p>
+        </div>
+        <div id="gameover">
+            <h2>GAME OVER</h2>
+        </div>
     </div>
 
-    <div id="gameover">
-        GAME OVER
-    </div>
 
     <div id="playground">
         <div id="grid"></div>
         <div id="pain"></div>
-        <table id="endScore">
-            <tr><td>
-                <p>Score : <span id="final_score"></span></p>
-                <p><a href="{{ path('game_show', { id: game.id }) }}">Try again ?</a></p>
-            </td></tr>
-        </table>
+        <div id="endscore">
+            <div class="tile tile-hot">
+                <h2>Score : <span id="finalscore"></span></h2>
+                <h2><a href="{{ path('game_show', { 'id': game.id }) }}" class="btn btn-primary btn-large btn-block">Try again ?</a></h2>
+            </div>
+        </div>
     </div>
-
 
 {% endblock %}
 
