@@ -10,7 +10,7 @@ $(document).ready(function() {
     var gridSize = nbLines * nbCols;
 
     // Decrypte global var datae
-    urls = JSON.parse(Base64.decode(datae));
+    urls = jQuery.parseJSON(Base64.decode(datae));
 
     console.log(urls);
 
