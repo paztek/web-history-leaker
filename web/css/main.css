@@ -80,6 +80,12 @@
     cursor: none;
 }
 
+#grid .item .replacement {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
 #grid .item.real.red1 a:visited {
     background-color: red;
 }
@@ -92,16 +98,6 @@
     background-color: orangered;
 }
 
-#grid .item a:hover,
-#grid .item.real a:hover,
-#grid .item.real.red1 a:hover,
-#grid .item.real.red2 a:hover,
-#grid .item.real.red3 a:hover,
-#grid .item.checked a:hover {
+#grid .item .replacement:hover {
     background-color: black;
 }
-
-#grid .item.checked a:active {
-    background-color: yellow;
-}
-
