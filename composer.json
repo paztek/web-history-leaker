@@ -1,4 +1,17 @@
 {
+    "name": "whl/web-history-leaker",
+    "description": "A web security experiment to make a user leak his web history while playing a JS game",
+    "authors": [
+        {
+            "name": "Matthieu Balmes",
+            "email": "matthieu.balmes@gmail.com"
+        },
+        {
+            "name": "Damien Thirion",
+            "email": "thirion.damien@gmail.com"
+        }
+    ],
+    "version": "0.1.0",
     "require": {
         "silex/silex": "1.0.*@dev",
 		"symfony/monolog-bridge": "~2.1",
