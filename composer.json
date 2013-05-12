@@ -11,7 +11,7 @@
             "email": "thirion.damien@gmail.com"
         }
     ],
-    "version": "0.1.1",
+    "version": "0.1.x-dev",
     "require": {
         "silex/silex": "1.0.*@dev",
 		"symfony/monolog-bridge": "~2.1",
