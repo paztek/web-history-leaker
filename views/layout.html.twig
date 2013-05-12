@@ -3,26 +3,28 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     {% block stylesheets %}
+        <link rel="stylesheet" href="/css/bootstrap.css" />
+        <link rel="stylesheet" href="/css/flat-ui.css" />
         <link rel="stylesheet" href="/css/main.css" />
     {% endblock %}
 	<title>{% block title %}WHL{% endblock %}</title>
 </head>
 <body>
     {% block body %}
-        <header>
-            {% block header %}
-            {% endblock %}
-        </header>
-        <main>
-            <div class="container">
+        <div class="container-narrow">
+            <header>
+                {% block header %}
+                {% endblock %}
+            </header>
+            <main class="jumbotron">
                 {% block main %}
                 {% endblock %}
-            </div>
-        </main>
-        <footer>
-            {% block footer %}
-            {% endblock %}
-        </footer>
+            </main>
+            <footer>
+                {% block footer %}
+                {% endblock %}
+            </footer>
+        </div>
     {% endblock %}
 
     {% block bootstrap %}
@@ -30,6 +32,10 @@
 
     {% block javascripts %}
         <script src="/js/libs/jquery.js"></script>
+        <!--[if lt IE 8]>
+        <script src="js/icon-font-ie7.js"></script>
+        <script src="js/icon-font-ie7-24.js"></script>
+        <![endif]-->
     {% endblock %}
 </body>
 </html>
