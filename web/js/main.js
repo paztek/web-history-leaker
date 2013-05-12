@@ -75,7 +75,7 @@ $(document).ready(function() {
 
     // Opera/IE and Chrome/Safari/Mozilla on the other hand have different behaviours concerning the display of the
     // link tooltip when we change/replace the DOM
-    if (navigator.appName == 'Opera' || navigator.appName == 'Internet Explorer') {
+    if (navigator.appName == 'Opera' || navigator.appName == 'Microsoft Internet Explorer') {
         // On hover, we just replace the href of the hovered link
         $('span.item').hover(function() {
             var a = $(this).find('a').first();
