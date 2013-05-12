@@ -77,11 +77,13 @@ $(document).ready(function() {
     // link tooltip when we change/replace the DOM
     if (navigator.appName == 'Opera' || navigator.appName == 'Internet Explorer') {
         // On hover, we just replace the href of the hovered link
-        $('span.item a').hover(function() {
-            $(this).data('href', $(this).attr('href'));
-            $(this).attr('href', '');
+        $('span.item').hover(function() {
+            var a = $(this).find('a').first();
+            a.data('href', a.attr('href'));
+            a.attr('href', '');
         }, function() {
-            $(this).attr('href', $(this).data('href'));
+            var a = $(this).find('a').first();
+            a.attr('href', a.data('href'));
         });
     } else {
         // On hover, we replace the <a/> with a <span/>

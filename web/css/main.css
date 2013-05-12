@@ -104,6 +104,9 @@
     background-color: orangered;
 }
 
-#grid .item a:hover, #grid .item.real.red1 a:hover, #grid .item.real.red2 a:hover, #grid .item.real.red3 a:hover {
+#grid .item a:hover,
+#grid .item.real.red1 a:hover,
+#grid .item.real.red2 a:hover,
+#grid .item.real.red3 a:hover {
     background-color: black;
 }
