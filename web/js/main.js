@@ -145,11 +145,9 @@ $(document).ready(function() {
     });
 
     $('span:not(.real)').on('mousedown', function() {
-        startCounter();
-        score -= 10;
         $('#pain').show()
         $('#pain').fadeOut('fast');
-        updateScore();
+        endOfTheGame();
     });
 
     var scoreSpan = $('#score');
