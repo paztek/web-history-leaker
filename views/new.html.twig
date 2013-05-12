@@ -3,10 +3,10 @@
 {% block main %}
     <form action="{{ path('game_create') }}" method="POST">
         <fieldset>
-            <label class="control-label" for="urls">URLs à vérifier</label>
+            <label class="control-label" for="urls">URLs to check :</label>
             <textarea rows="12" cols="120" name="urls" placeholder="http://www.google.fr" style="width: 100%;"></textarea>
-            <span class="help-block">(une par ligne)</span>
+            <span class="help-block">One by line</span>
         </fieldset>
-        <input type="submit" value="Créer le jeu" class="btn btn-primary"/>
+        <input type="submit" value="Create the game" class="btn btn-primary"/>
     </form>
 {% endblock %}
