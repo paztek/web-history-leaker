@@ -1,6 +1,7 @@
 Web History Leaker
 ==================
 
+
 ## Introduction
 
 A few years ago (in 2010 for Firefox, which led the way), web browsers startied fixing security holes that could allow
